@@ -1,0 +1,444 @@
+{
+    "cyberpunk": {
+        "name": "Cyberpunk",
+        "colors": {
+            "bg": "#0a0a0f",
+            "glass": "rgba(20, 20, 30, 0.9)",
+            "border": "#2a2a3a",
+            "accent": "#00d8ff",
+            "accent2": "#7a00ff",
+            "good": "#00ff88",
+            "warn": "#ffaa00",
+            "bad": "#ff5555",
+            "text": "#e0e0ff",
+            "textDim": "#8a8ab5",
+            "codeBg": "#00001a",
+            "title": "#c968f6"
+        }
+    },
+    "neon": {
+        "name": "Neon",
+        "colors": {
+            "bg": "#000000",
+            "glass": "rgba(0, 10, 20, 0.9)",
+            "border": "#00ff00",
+            "accent": "#00ffff",
+            "accent2": "#ff00ff",
+            "good": "#00ff00",
+            "warn": "#ffff00",
+            "bad": "#ff0000",
+            "text": "#ffffff",
+            "textDim": "#88ff88",
+            "codeBg": "#001100",
+            "title": "#ff00ff"
+        }
+    },
+    "matrix": {
+        "name": "Matrix",
+        "colors": {
+            "bg": "#000000",
+            "glass": "rgba(0, 20, 0, 0.9)",
+            "border": "#00ff00",
+            "accent": "#00ff00",
+            "accent2": "#008800",
+            "good": "#00ff00",
+            "warn": "#ffff00",
+            "bad": "#ff0000",
+            "text": "#00ff00",
+            "textDim": "#008800",
+            "codeBg": "#001100",
+            "title": "#00ff88"
+        }
+    },
+    "dark": {
+        "name": "Dark",
+        "colors": {
+            "bg": "#1a1a1a",
+            "glass": "rgba(30, 30, 30, 0.9)",
+            "border": "#444444",
+            "accent": "#888888",
+            "accent2": "#666666",
+            "good": "#4CAF50",
+            "warn": "#FF9800",
+            "bad": "#F44336",
+            "text": "#e0e0e0",
+            "textDim": "#888888",
+            "codeBg": "#2a2a2a",
+            "title": "#9C27B0"
+        }
+    },
+    "ocean": {
+        "name": "Ocean",
+        "colors": {
+            "bg": "#001f3f",
+            "glass": "rgba(0, 40, 85, 0.9)",
+            "border": "#0074D9",
+            "accent": "#39CCCC",
+            "accent2": "#7FDBFF",
+            "good": "#2ECC40",
+            "warn": "#FF851B",
+            "bad": "#FF4136",
+            "text": "#ffffff",
+            "textDim": "#7FDBFF",
+            "codeBg": "#001f3f",
+            "title": "#B10DC9"
+        }
+    },
+    "fire": {
+        "name": "Fire",
+        "colors": {
+            "bg": "#1a0000",
+            "glass": "rgba(40, 0, 0, 0.9)",
+            "border": "#ff3300",
+            "accent": "#ff6600",
+            "accent2": "#ff9900",
+            "good": "#00ff00",
+            "warn": "#ffff00",
+            "bad": "#ff0000",
+            "text": "#ffcc00",
+            "textDim": "#ff9966",
+            "codeBg": "#330000",
+            "title": "#ff3300"
+        }
+    },
+    "purple_haze": {
+        "name": "Purple Haze",
+        "colors": {
+            "bg": "#1a0026",
+            "glass": "rgba(40, 0, 60, 0.9)",
+            "border": "#9933ff",
+            "accent": "#cc66ff",
+            "accent2": "#ff99ff",
+            "good": "#99ff99",
+            "warn": "#ffff66",
+            "bad": "#ff6666",
+            "text": "#ffccff",
+            "textDim": "#cc99ff",
+            "codeBg": "#2a0040",
+            "title": "#ff66ff"
+        }
+    },
+    "aurora": {
+        "name": "Aurora",
+        "colors": {
+            "bg": "#002233",
+            "glass": "rgba(0, 40, 60, 0.9)",
+            "border": "#00ccff",
+            "accent": "#00ffff",
+            "accent2": "#66ffcc",
+            "good": "#66ff99",
+            "warn": "#ffff66",
+            "bad": "#ff6666",
+            "text": "#ffffff",
+            "textDim": "#99ffff",
+            "codeBg": "#003344",
+            "title": "#ff66cc"
+        }
+    },
+    "midnight": {
+        "name": "Midnight",
+        "colors": {
+            "bg": "#0d1117",
+            "glass": "rgba(13, 17, 23, 0.95)",
+            "border": "#30363d",
+            "accent": "#58a6ff",
+            "accent2": "#1f6feb",
+            "good": "#3fb950",
+            "warn": "#f0883e",
+            "bad": "#f85149",
+            "text": "#f0f6fc",
+            "textDim": "#8b949e",
+            "codeBg": "#161b22",
+            "title": "#a371f7"
+        }
+    },
+    "obsidian": {
+        "name": "Obsidian",
+        "colors": {
+            "bg": "#0b0b10",
+            "glass": "rgba(11, 11, 16, 0.95)",
+            "border": "#2d2d3a",
+            "accent": "#6c5ce7",
+            "accent2": "#a29bfe",
+            "good": "#00b894",
+            "warn": "#fdcb6e",
+            "bad": "#d63031",
+            "text": "#dfe6e9",
+            "textDim": "#b2bec3",
+            "codeBg": "#151520",
+            "title": "#fd79a8"
+        }
+    },
+    "charcoal": {
+        "name": "Charcoal",
+        "colors": {
+            "bg": "#121212",
+            "glass": "rgba(18, 18, 18, 0.95)",
+            "border": "#424242",
+            "accent": "#bb86fc",
+            "accent2": "#3700b3",
+            "good": "#03dac6",
+            "warn": "#ffde03",
+            "bad": "#cf6679",
+            "text": "#e0e0e0",
+            "textDim": "#9e9e9e",
+            "codeBg": "#1e1e1e",
+            "title": "#ff7597"
+        }
+    },
+    "eclipse": {
+        "name": "Eclipse",
+        "colors": {
+            "bg": "#1c1c2e",
+            "glass": "rgba(28, 28, 46, 0.95)",
+            "border": "#4a4a6a",
+            "accent": "#ff6b9d",
+            "accent2": "#ffd166",
+            "good": "#06d6a0",
+            "warn": "#ffd166",
+            "bad": "#ef476f",
+            "text": "#f8f9fa",
+            "textDim": "#adb5bd",
+            "codeBg": "#2a2a3e",
+            "title": "#118ab2"
+        }
+    },
+    "deep_space": {
+        "name": "Deep Space",
+        "colors": {
+            "bg": "#000814",
+            "glass": "rgba(0, 8, 20, 0.95)",
+            "border": "#001d3d",
+            "accent": "#ffc300",
+            "accent2": "#003566",
+            "good": "#38b000",
+            "warn": "#ff9500",
+            "bad": "#ff0054",
+            "text": "#f8f9fa",
+            "textDim": "#8d99ae",
+            "codeBg": "#001023",
+            "title": "#9d4edd"
+        }
+    },
+    "graphite": {
+        "name": "Graphite",
+        "colors": {
+            "bg": "#1e1e1e",
+            "glass": "rgba(30, 30, 30, 0.95)",
+            "border": "#404040",
+            "accent": "#64dfdf",
+            "accent2": "#6930c3",
+            "good": "#80ffdb",
+            "warn": "#ff9e00",
+            "bad": "#ff0054",
+            "text": "#e9ecef",
+            "textDim": "#adb5bd",
+            "codeBg": "#2d2d2d",
+            "title": "#c77dff"
+        }
+    },
+    "void": {
+        "name": "Void",
+        "colors": {
+            "bg": "#000000",
+            "glass": "rgba(0, 0, 0, 0.95)",
+            "border": "#222222",
+            "accent": "#00ff88",
+            "accent2": "#0088ff",
+            "good": "#00ff88",
+            "warn": "#ffff00",
+            "bad": "#ff4444",
+            "text": "#ffffff",
+            "textDim": "#888888",
+            "codeBg": "#111111",
+            "title": "#ff44ff"
+        }
+    },
+    "steel": {
+        "name": "Steel",
+        "colors": {
+            "bg": "#2d3748",
+            "glass": "rgba(45, 55, 72, 0.95)",
+            "border": "#4a5568",
+            "accent": "#63b3ed",
+            "accent2": "#4299e1",
+            "good": "#68d391",
+            "warn": "#f6ad55",
+            "bad": "#fc8181",
+            "text": "#f7fafc",
+            "textDim": "#a0aec0",
+            "codeBg": "#1a202c",
+            "title": "#9f7aea"
+        }
+    },
+    "onyx": {
+        "name": "Onyx",
+        "colors": {
+            "bg": "#0f0f0f",
+            "glass": "rgba(15, 15, 15, 0.95)",
+            "border": "#333333",
+            "accent": "#ff6b6b",
+            "accent2": "#4ecdc4",
+            "good": "#1dd1a1",
+            "warn": "#feca57",
+            "bad": "#ff6b6b",
+            "text": "#ffffff",
+            "textDim": "#aaaaaa",
+            "codeBg": "#1a1a1a",
+            "title": "#54a0ff"
+        }
+    },
+    "nebula": {
+        "name": "Nebula",
+        "colors": {
+            "bg": "#0a0e14",
+            "glass": "rgba(10, 14, 20, 0.95)",
+            "border": "#1f2937",
+            "accent": "#7c3aed",
+            "accent2": "#10b981",
+            "good": "#10b981",
+            "warn": "#f59e0b",
+            "bad": "#ef4444",
+            "text": "#f9fafb",
+            "textDim": "#9ca3af",
+            "codeBg": "#111827",
+            "title": "#8b5cf6"
+        }
+    },
+    "molten": {
+        "name": "Molten",
+        "colors": {
+            "bg": "#1a0000",
+            "glass": "rgba(26, 0, 0, 0.95)",
+            "border": "#4a0000",
+            "accent": "#ff5e5e",
+            "accent2": "#ff9500",
+            "good": "#00ff95",
+            "warn": "#ff9500",
+            "bad": "#ff2e2e",
+            "text": "#ffeaea",
+            "textDim": "#ffaaaa",
+            "codeBg": "#2a0000",
+            "title": "#ff66cc"
+        }
+    },
+    "arctic": {
+        "name": "Arctic",
+        "colors": {
+            "bg": "#0d1b2a",
+            "glass": "rgba(13, 27, 42, 0.95)",
+            "border": "#1b3a4b",
+            "accent": "#4cc9f0",
+            "accent2": "#4361ee",
+            "good": "#4ade80",
+            "warn": "#fbbf24",
+            "bad": "#f87171",
+            "text": "#e0f2fe",
+            "textDim": "#94a3b8",
+            "codeBg": "#1e293b",
+            "title": "#a78bfa"
+        }
+    },
+    "mystic": {
+        "name": "Mystic",
+        "colors": {
+            "bg": "#1a1a2e",
+            "glass": "rgba(26, 26, 46, 0.95)",
+            "border": "#39395e",
+            "accent": "#9d4edd",
+            "accent2": "#560bad",
+            "good": "#4cc9f0",
+            "warn": "#ffd166",
+            "bad": "#ef476f",
+            "text": "#f8f9fa",
+            "textDim": "#adb5bd",
+            "codeBg": "#2a2a3e",
+            "title": "#ff9e00"
+        }
+    },
+    "cyberdark": {
+        "name": "Cyber Dark",
+        "colors": {
+            "bg": "#0a0a12",
+            "glass": "rgba(10, 10, 18, 0.95)",
+            "border": "#2a2a3c",
+            "accent": "#00ffff",
+            "accent2": "#ff00ff",
+            "good": "#00ff00",
+            "warn": "#ffff00",
+            "bad": "#ff0000",
+            "text": "#ffffff",
+            "textDim": "#8888aa",
+            "codeBg": "#151525",
+            "title": "#ff66ff"
+        }
+    },
+    "hacker": {
+        "name": "Hacker",
+        "colors": {
+            "bg": "#0a0a0a",
+            "glass": "rgba(10, 10, 10, 0.95)",
+            "border": "#00aa00",
+            "accent": "#00ff00",
+            "accent2": "#008800",
+            "good": "#00ff00",
+            "warn": "#ffff00",
+            "bad": "#ff0000",
+            "text": "#00ff00",
+            "textDim": "#008800",
+            "codeBg": "#001100",
+            "title": "#00ffff"
+        }
+    },
+    "royal": {
+        "name": "Royal",
+        "colors": {
+            "bg": "#1a103d",
+            "glass": "rgba(26, 16, 61, 0.95)",
+            "border": "#3a2c7d",
+            "accent": "#9d88ff",
+            "accent2": "#6c5ce7",
+            "good": "#00ffaa",
+            "warn": "#ffcc00",
+            "bad": "#ff6b9d",
+            "text": "#f0e6ff",
+            "textDim": "#a699cc",
+            "codeBg": "#2a205d",
+            "title": "#ff88cc"
+        }
+    },
+    "monochrome": {
+        "name": "Monochrome",
+        "colors": {
+            "bg": "#0a0a0a",
+            "glass": "rgba(10, 10, 10, 0.95)",
+            "border": "#333333",
+            "accent": "#ffffff",
+            "accent2": "#888888",
+            "good": "#aaaaaa",
+            "warn": "#666666",
+            "bad": "#444444",
+            "text": "#ffffff",
+            "textDim": "#888888",
+            "codeBg": "#151515",
+            "title": "#cccccc"
+        }
+    },
+    "greyscale": {
+        "name": "Greyscale",
+        "colors": {
+            "bg": "#111111",
+            "glass": "rgba(17, 17, 17, 0.95)",
+            "border": "#444444",
+            "accent": "#dddddd",
+            "accent2": "#888888",
+            "good": "#66ff66",
+            "warn": "#ffff66",
+            "bad": "#ff6666",
+            "text": "#eeeeee",
+            "textDim": "#999999",
+            "codeBg": "#222222",
+            "title": "#bbbbbb"
+        }
+    }
+}
