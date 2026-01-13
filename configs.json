@@ -1,0 +1,75 @@
+{
+  "TAG": "[RC]",
+  "SETTINGS_KEY": "rc_helper_settings_v1",
+  "DEFAULT_SETTINGS": {
+    "uiVisible": true,
+    "autoCollectDailyReward": true,
+    "autoClaimQuestRewards": true,
+    "autoClickChooseGame": true,
+    "ignoreEndLoader": false,
+    "randomIntervalCalls": true,
+    "fetchMinMs": 15000,
+    "fetchMaxMs": 30000,
+    "debugLogs": false,
+    "theme": "cyberpunk",
+    "showThemeSelector": true,
+    "autoRechargeElectricity": true,
+    "monitorApiCalls": true,
+    "autoGoogleSignIn": true,
+    "showToggles": true,
+    "soundEffects": true,
+    "soundVolume": 0.3,
+    "clickSounds": true,
+    "clickSoundVolume": 0.4,
+    "autoMuteOnIdle": true,
+    "idleTimeoutMinutes": 2
+  },
+  "API_LOG_LIMIT": 50,
+  "INTERVALS": {
+    "MAIN_LOOP": 1000,
+    "CHOOSE_GAME": 1500,
+    "ELECTRICITY_MONITOR": 5000,
+    "ELECTRICITY_DISPLAY": 1000,
+    "HAMSTER_CHECK": 1000,
+    "GOOGLE_SIGNIN_CHECK": 2000
+  },
+  "API_ENDPOINTS": [
+    "/api/",
+    "/auth/",
+    "game/check_game",
+    "user-electricity-info",
+    "user-pets",
+    "tasks?type=daily"
+  ],
+  "GAME_TO_TYPE": {
+    "Crypto Hex": "game_by_number_crypto_hex",
+    "Coinclick": "game_by_number_coinclick",
+    "Dr.Hamster": "game_by_number_dr._hamster",
+    "Coin-match": "game_by_number_coin-match",
+    "Token Surfer: Snow Ride": "game_by_number_token_surfer",
+    "Token Blaster": "game_by_number_token_blaster",
+    "Coin Fisher": "game_by_number_coin_fisher",
+    "Hamster Climber": "game_by_number_hamster_climber",
+    "Flappy Rocket": "game_by_number_flappy_rocket",
+    "Mission Hamspossible": "game_by_number_mission_hampossible",
+    "Crypto Hamster": "game_by_number_crypto_hamster",
+    "2048 Coins": "game_by_number_2048_coins",
+    "Cryptonoid": "game_by_number_cryptonoid",
+    "Coin-Flip": "game_by_number_coin-flip",
+    "Lambo Rider": "game_by_number_lambo_rider"
+  },
+  "PET_CHECK_INTERVAL": 60000,
+  "MAX_PETS_DISPLAY": 5,
+  "PETS": {
+    "lord_hexron": {
+      "pet_id": "694f77166f94c5dfed87b72d",
+      "expeditionId": "67597aaf95ff918743e31d5e",
+      "expeditionName": "Snowlit Avenue"
+    },
+    "cowham": {
+      "pet_id": "695d552b825f08976d152cc9",
+      "expeditionId": "66fd2a3249652dbe6a40dfe0",
+      "expeditionName": "Deep Forest"
+    }
+  }
+}
