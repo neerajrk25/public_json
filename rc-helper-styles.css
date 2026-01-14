@@ -1,0 +1,1371 @@
+:root {
+    --rc-bg: #0a0a0f;
+    --rc-glass: rgba(20, 20, 30, 0.9);
+    --rc-border: #2a2a3a;
+    --rc-accent: #00d8ff;
+    --rc-accent-2: #7a00ff;
+    --rc-good: #00ff88;
+    --rc-warn: #ffaa00;
+    --rc-bad: #ff5555;
+    --rc-text: #e0e0ff;
+    --rc-text-dim: #8a8ab5;
+    --rc-code-bg: #00001a;
+    --rc-title: #c968f6;
+}
+
+#rcPanel {
+    position: fixed;
+    right: 12px;
+    bottom: 12px;
+    width: 320px;
+    max-width: calc(100vw - 24px);
+    background:
+        linear-gradient(135deg, var(--rc-bg) 0%, #12121a 100%),
+        var(--rc-glass);
+    color: var(--rc-text);
+    border-radius: 8px;
+    border: 1px solid var(--rc-border);
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(0, 216, 255, 0.1),
+        0 0 24px rgba(0, 216, 255, 0.08);
+    backdrop-filter: blur(8px) saturate(180%);
+    -webkit-backdrop-filter: blur(8px) saturate(180%);
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.3;
+    z-index: 999999;
+    overflow: hidden;
+    letter-spacing: -0.1px;
+}
+
+/* Terminal-style header */
+#rcPanel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: linear-gradient(90deg,
+            #ff5f56 0%,
+            #ffbd2e 40%,
+            #27c93f 70%,
+            transparent 100%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#rcPanel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            transparent,
+            var(--rc-accent) 20%,
+            var(--rc-accent-2) 50%,
+            transparent 80%);
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+#rcPanelHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 10px;
+    cursor: move;
+    user-select: none;
+    background: rgba(10, 10, 15, 0.9);
+    border-bottom: 1px solid var(--rc-border);
+    position: relative;
+    z-index: 2;
+    min-height: 32px;
+}
+
+#rcTitleRow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#rcDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--rc-good);
+    box-shadow:
+        0 0 0 1px rgba(0, 255, 136, 0.3),
+        0 0 6px rgba(0, 255, 136, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#rcTitle {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--rc-text);
+    background: linear-gradient(90deg, #00d8ff, #7a00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(0, 216, 255, 0.3);
+}
+
+/* Pill glow animation */
+@keyframes pillGlow {
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(0, 216, 255, 0),
+            0 0 0 0 rgba(122, 0, 255, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 8px 4px rgba(0, 216, 255, 0.4),
+            0 0 12px 6px rgba(122, 0, 255, 0.2);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(0, 216, 255, 0),
+            0 0 0 0 rgba(122, 0, 255, 0);
+    }
+}
+
+.rc-pill-glow {
+    animation: pillGlow 0.8s ease-in-out;
+}
+
+/* Enhanced pill styling */
+#rcPill {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,
+            rgba(0, 216, 255, 0.15),
+            rgba(122, 0, 255, 0.15));
+    border: 1px solid rgba(0, 216, 255, 0.3);
+    color: #b3f0ff;
+    text-shadow: 0 0 4px rgba(0, 216, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+#rcTogglesBtn {
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-left: 6px;
+}
+
+#rcTogglesBtn:hover {
+    background: rgba(0, 216, 255, 0.1);
+    border-color: rgba(0, 216, 255, 0.3);
+}
+
+#rcTogglesBtn svg {
+    height: 14px;
+    width: 14px;
+    opacity: 0.8;
+}
+
+#rcCollapse {
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--rc-text-dim);
+    transition: all 0.2s ease;
+}
+
+#rcCollapse:hover {
+    background: rgba(0, 216, 255, 0.1);
+    color: var(--rc-text);
+}
+
+#rcPanelBody,
+#rcPanelBody2 {
+    padding: 10px;
+}
+
+/* Button grid - more compact */
+#rcBtns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.rcBtn {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.02));
+    color: var(--rc-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.rcBtn:hover {
+    background: linear-gradient(180deg,
+            rgba(0, 216, 255, 0.15),
+            rgba(0, 216, 255, 0.05));
+    border-color: rgba(0, 216, 255, 0.4);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 216, 255, 0.2);
+}
+
+.rcBtn:active {
+    transform: translateY(0);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+/* ULTRA COMPACT TOGGLES - 4x2 grid with icons */
+#rcToggles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+    margin-bottom: 8px;
+    transform-origin: top;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        filter 0.3s ease,
+        max-height 0.2s ease-out;
+}
+
+/* Ultra compact toggle button */
+.rcToggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 4px 2px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.15s ease;
+    cursor: pointer;
+    position: relative;
+    min-height: 36px;
+    overflow: hidden;
+}
+
+.rcToggle:hover {
+    background: rgba(0, 216, 255, 0.08);
+    border-color: rgba(0, 216, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Hidden checkbox */
+.rcToggle input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+/* Icon styling */
+.rcToggle-icon {
+    font-size: 14px;
+    line-height: 1;
+    transition: all 0.2s ease;
+    filter: drop-shadow(0 0 2px currentColor);
+}
+
+/* Label styling */
+.rcToggle-label {
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--rc-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    text-align: center;
+    line-height: 1.1;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-top: 5px;
+    transition: all 0.2s ease;
+}
+
+/* Checked state */
+.rcToggle input:checked~.rcToggle-icon {
+    color: var(--rc-accent);
+    transform: scale(1.1);
+}
+
+.rcToggle input:checked~.rcToggle-label {
+    color: var(--rc-text);
+    font-weight: 700;
+}
+
+.rcToggle input:checked~.rcToggle::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--rc-accent);
+}
+
+/* Active state indicator */
+.rcToggle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.rcToggle input:checked::after {
+    background: var(--rc-accent);
+    box-shadow: 0 0 4px var(--rc-accent);
+}
+
+/* Tooltip */
+.rcToggle:hover::before {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--rc-text);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    white-space: pre-line;
+    z-index: 10000;
+    border: 1px solid var(--rc-border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    min-width: 120px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* Hide toggle labels on very small screens */
+@media (max-width: 350px) {
+    #rcToggles {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .rcToggle-label {
+        font-size: 7px;
+    }
+
+    .rcToggle-icon {
+        font-size: 12px;
+    }
+}
+
+/* Toggle animations - keep as is */
+#rcToggles.rc-hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    filter: blur(4px);
+    pointer-events: none;
+    margin-bottom: 0;
+    gap: 0;
+}
+
+/* Terminal-style output */
+#rcLines,
+#rcLines2 {
+    white-space: pre-wrap;
+    font-size: 11.7px;
+    line-height: 1.4;
+    padding: 10px;
+    border-radius: 6px;
+    background: var(--rc-code-bg);
+    border: 1px solid rgba(0, 216, 255, 0.1);
+    font-family: 'SF Mono', 'Monaco', monospace;
+    overflow: auto;
+    max-height: 200px;
+    margin-bottom: 0;
+}
+
+#rcLines {
+    background:
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 19px,
+            rgba(0, 216, 255, 0.02) 19px,
+            rgba(0, 216, 255, 0.02) 20px),
+        var(--rc-code-bg);
+}
+
+/* Terminal prompt styling */
+#rcLines p {
+    margin: 0 0 3px 0;
+    position: relative;
+    padding-left: 12px;
+}
+
+#rcLines p::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--rc-accent);
+    opacity: 0.7;
+}
+
+#rcLines p.daily-games-title::before {
+    content: none;
+}
+
+#rcLines p:first-child {
+    color: var(--rc-text-dim);
+    padding-left: 0;
+}
+
+#rcLines p:first-child::before {
+    content: none;
+}
+
+#rcLines p.daily-games-title {
+    color: var(--rc-title) !important;
+    padding-left: 0;
+}
+
+#rcLines p.puzzle-title {
+    margin-top: 10px;
+}
+
+.near-to-completition {
+    color: var(--rc-warn) !important;
+}
+
+.completed-task {
+    color: var(--rc-good) !important;
+}
+
+#rcLines2 {
+    font-size: 9px;
+    padding: 8px;
+    background: rgba(0, 0, 10, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#rcLines2 p {
+    margin: 2px 0;
+    color: var(--rc-text-dim);
+}
+
+.expeditionStat,
+.electricityInfo {
+    color: var(--rc-text-dim);
+    font-size: 11.7px;
+    font-family: 'SF Mono', monospace;
+}
+
+.expeditionStat::before {
+    content: "[HAM] ";
+    color: var(--rc-accent);
+}
+
+.electricityInfo::before {
+    content: "[BAT] ";
+    color: var(--rc-accent);
+}
+
+.danger {
+    color: var(--rc-bad) !important;
+}
+
+#rcFooter {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 9px;
+    color: var(--rc-text-dim);
+    text-align: center;
+}
+
+#rcSmallLink {
+    cursor: pointer;
+    color: var(--rc-text-dim);
+    transition: color 0.2s ease;
+}
+
+#rcSmallLink:hover {
+    color: var(--rc-accent);
+}
+
+/* ================================
+      ANIMATIONS (keep as is)
+    ================================ */
+
+/* Panel appear/disappear */
+#rcPanel {
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s cubic-bezier(.22, .61, .36, 1);
+}
+
+#rcPanel.rc-hidden {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    pointer-events: none;
+}
+
+/* Collapse animation */
+#rcPanelBody {
+    transform-origin: top;
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+#rcPanelBody.rc-collapsed {
+    max-height: 40px;
+    opacity: 1;
+    transform: scaleY(0.92);
+    overflow: hidden;
+}
+
+/* Lines refresh pulse */
+@keyframes rcPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(0, 216, 255, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 12px rgba(0, 216, 255, 0.25);
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(0, 216, 255, 0);
+    }
+}
+
+#rcLines.rc-refresh {
+    animation: rcPulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        box-shadow:
+            0 0 0 1px rgba(0, 255, 136, 0.3),
+            0 0 6px rgba(0, 255, 136, 0.5);
+    }
+
+    50% {
+        opacity: 0.6;
+        box-shadow:
+            0 0 0 1px rgba(0, 255, 136, 0.5),
+            0 0 10px rgba(0, 255, 136, 0.7);
+    }
+
+    100% {
+        opacity: 1;
+        box-shadow:
+            0 0 0 1px rgba(0, 255, 136, 0.3),
+            0 0 6px rgba(0, 255, 136, 0.5);
+    }
+}
+
+/* INTENSE PILL GLOW ANIMATIONS */
+@keyframes pillGlowPulse {
+    0% {
+        box-shadow:
+            0 0 0 0 rgba(0, 216, 255, 0.6),
+            0 0 0 0 rgba(122, 0, 255, 0.3),
+            inset 0 0 10px rgba(0, 216, 255, 0.3);
+    }
+
+    70% {
+        box-shadow:
+            0 0 20px 8px rgba(0, 216, 255, 0.8),
+            0 0 30px 15px rgba(122, 0, 255, 0.4),
+            inset 0 0 20px rgba(0, 216, 255, 0.6);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 0 rgba(0, 216, 255, 0),
+            0 0 0 0 rgba(122, 0, 255, 0),
+            inset 0 0 10px rgba(0, 216, 255, 0.1);
+    }
+}
+
+@keyframes pillBorderFlow {
+    0% {
+        border-color: rgba(0, 216, 255, 0.3);
+        border-image: linear-gradient(45deg,
+                rgba(0, 216, 255, 0.3) 0%,
+                rgba(122, 0, 255, 0.3) 100%) 1;
+    }
+
+    25% {
+        border-color: rgba(122, 0, 255, 0.6);
+        border-image: linear-gradient(45deg,
+                rgba(122, 0, 255, 0.6) 0%,
+                rgba(0, 216, 255, 0.6) 100%) 1;
+    }
+
+    50% {
+        border-color: rgba(0, 216, 255, 0.8);
+        border-image: linear-gradient(45deg,
+                rgba(0, 216, 255, 0.8) 0%,
+                rgba(122, 0, 255, 0.8) 100%) 1;
+    }
+
+    75% {
+        border-color: rgba(122, 0, 255, 0.6);
+        border-image: linear-gradient(45deg,
+                rgba(122, 0, 255, 0.6) 0%,
+                rgba(0, 216, 255, 0.6) 100%) 1;
+    }
+
+    100% {
+        border-color: rgba(0, 216, 255, 0.3);
+        border-image: linear-gradient(45deg,
+                rgba(0, 216, 255, 0.3) 0%,
+                rgba(122, 0, 255, 0.3) 100%) 1;
+    }
+}
+
+@keyframes pillTextGlow {
+
+    0%,
+    100% {
+        color: #b3f0ff;
+        text-shadow:
+            0 0 4px rgba(0, 216, 255, 0.5),
+            0 0 8px rgba(0, 216, 255, 0.3);
+    }
+
+    50% {
+        color: #ffffff;
+        text-shadow:
+            0 0 8px rgba(0, 216, 255, 0.8),
+            0 0 15px rgba(0, 216, 255, 0.6),
+            0 0 25px rgba(122, 0, 255, 0.4);
+    }
+}
+
+@keyframes pillBackgroundPulse {
+
+    0%,
+    100% {
+        background: linear-gradient(135deg,
+                rgba(0, 216, 255, 0.15),
+                rgba(122, 0, 255, 0.15));
+    }
+
+    50% {
+        background: linear-gradient(135deg,
+                rgba(0, 216, 255, 0.3),
+                rgba(122, 0, 255, 0.3));
+    }
+}
+
+/* Pill container for additional effects */
+#rcPillContainer {
+    position: relative;
+    display: inline-block;
+}
+
+#rcPillContainer::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 14px;
+    background: linear-gradient(45deg,
+            rgba(0, 216, 255, 0.2),
+            rgba(122, 0, 255, 0.2),
+            rgba(0, 216, 255, 0.2));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#rcPillContainer.glow-active::before {
+    opacity: 1;
+    animation: pillGlowPulse 1s ease-out;
+}
+
+/* Enhanced pill styling */
+#rcPill {
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,
+            rgba(0, 216, 255, 0.15),
+            rgba(122, 0, 255, 0.15));
+    border: 1px solid rgba(0, 216, 255, 0.3);
+    color: #b3f0ff;
+    text-shadow:
+        0 0 4px rgba(0, 216, 255, 0.5),
+        0 0 8px rgba(0, 216, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    position: relative;
+    z-index: 1;
+    min-width: 70px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Glow states */
+#rcPill.rc-pill-glow-intense {
+    animation:
+        pillGlowPulse 1.2s ease-out,
+        pillBorderFlow 1.2s ease-in-out,
+        pillTextGlow 1.2s ease-in-out,
+        pillBackgroundPulse 1.2s ease-in-out;
+}
+
+#rcPill.rc-pill-glow-intense::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(0, 216, 255, 0.2),
+            transparent);
+    z-index: -1;
+    animation: pillGlowPulse 1.2s ease-out;
+}
+
+/* Special glow for different states */
+#rcPill.rc-pill-success {
+    border-color: rgba(0, 255, 136, 0.4);
+    background: linear-gradient(135deg,
+            rgba(0, 255, 136, 0.15),
+            rgba(0, 216, 255, 0.15));
+}
+
+#rcPill.rc-pill-success.rc-pill-glow-intense {
+    animation:
+        pillGlowPulse 1.2s ease-out,
+        pillBorderFlow 1.2s ease-in-out,
+        pillTextGlow 1.2s ease-in-out,
+        pillBackgroundPulse 1.2s ease-in-out;
+}
+
+#rcPill.rc-pill-warning {
+    border-color: rgba(255, 170, 0, 0.4);
+    background: linear-gradient(135deg,
+            rgba(255, 170, 0, 0.15),
+            rgba(255, 85, 85, 0.15));
+}
+
+#rcPill.rc-pill-error {
+    border-color: rgba(255, 85, 85, 0.4);
+    background: linear-gradient(135deg,
+            rgba(255, 85, 85, 0.15),
+            rgba(255, 170, 0, 0.15));
+}
+
+#rcPill.rc-pill-fetching {
+    border-color: rgba(122, 0, 255, 0.4);
+    background: linear-gradient(135deg,
+            rgba(122, 0, 255, 0.15),
+            rgba(0, 216, 255, 0.15));
+}
+
+/* ... existing CSS ... */
+
+/* Volume slider container */
+#rcVolumeContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Volume slider track */
+#rcVolumeContainer input[type="range"] {
+    flex: 1;
+    height: 4px;
+    -webkit-appearance: none;
+    background: linear-gradient(90deg,
+            rgba(0, 216, 255, 0.6) 0%,
+            rgba(0, 216, 255, 0.6) 50%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0.1) 100%);
+    border-radius: 2px;
+    outline: none;
+    margin: 0;
+}
+
+/* Webkit thumb styles (Chrome, Safari, Edge) */
+#rcVolumeContainer input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--rc-accent);
+    cursor: pointer;
+    box-shadow:
+        0 0 0 2px rgba(0, 216, 255, 0.3),
+        0 0 8px rgba(0, 216, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    margin-top: -6px;
+    /* Center vertically */
+    position: relative;
+    z-index: 2;
+}
+
+#rcVolumeContainer input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 2px;
+    background: transparent;
+    /* Make track transparent since we use gradient */
+}
+
+/* Firefox thumb styles */
+#rcVolumeContainer input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--rc-accent);
+    cursor: pointer;
+    box-shadow:
+        0 0 0 2px rgba(0, 216, 255, 0.3),
+        0 0 8px rgba(0, 216, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+#rcVolumeContainer input[type="range"]::-moz-range-track {
+    height: 4px;
+    border-radius: 2px;
+    background: transparent;
+    border: none;
+}
+
+#rcVolumeContainer input[type="range"]::-moz-range-progress {
+    background: rgba(0, 216, 255, 0.6);
+    height: 4px;
+    border-radius: 2px 0 0 2px;
+}
+
+/* Hover effects */
+#rcVolumeContainer input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 0 3px rgba(0, 216, 255, 0.4),
+        0 0 12px rgba(0, 216, 255, 0.6);
+}
+
+#rcVolumeContainer input[type="range"]:hover::-moz-range-thumb {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 0 3px rgba(0, 216, 255, 0.4),
+        0 0 12px rgba(0, 216, 255, 0.6);
+}
+
+/* Volume icon */
+#rcVolumeContainer span:first-child {
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    min-width: 20px;
+    text-align: center;
+}
+
+#rcVolumeContainer span:first-child:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Volume percentage */
+#rcVolumeContainer span:last-child {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--rc-text-dim);
+    min-width: 32px;
+    text-align: center;
+    font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/* Idle pill style */
+#rcPill.rc-pill-idle {
+    background: linear-gradient(135deg,
+            rgba(255, 170, 0, 0.2),
+            rgba(255, 85, 85, 0.2));
+    border-color: rgba(255, 170, 0, 0.4);
+    color: #ffcc66;
+}
+
+/* Achievement Tooltip Styles */
+.rc-achievement-badge {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: var(--rc-accent);
+    color: var(--rc-bg);
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    cursor: help;
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.rc-achievement-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.rc-achievement-badge.games {
+    top: -15px;
+    font-family: Arcana, sans-serif;
+}
+
+@media (min-width: 992px) {
+    .rc-achievement-badge.games {
+        top: -25px;
+    }
+}
+
+.rc-achievement-tooltip {
+    position: absolute;
+    bottom: 100%;
+    right: 50%;
+    transform: translateX(50%) translateY(10px);
+    background: rgba(10, 10, 15, 0.95);
+    border: 1px solid var(--rc-border);
+    border-radius: 8px;
+    padding: 12px;
+    min-width: 200px;
+    max-width: 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1001;
+    transition: all 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    pointer-events: none;
+}
+
+.rc-achievement-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--rc-border);
+}
+
+.rc-achievement-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: rgba(10, 10, 15, 0.95);
+    margin-top: -1px;
+}
+
+.tooltip-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tooltip-header strong {
+    font-size: 12px;
+    color: var(--rc-text);
+    font-weight: 600;
+}
+
+.tooltip-level {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* RENAMED: progress-bar to achievement-progress-bar */
+.achievement-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+/* RENAMED: progress-fill to achievement-progress-fill */
+.achievement-progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+/* RENAMED: progress-text to achievement-progress-text */
+.achievement-progress-text {
+    font-size: 10px;
+    color: var(--rc-text-dim);
+    text-align: center;
+    font-weight: 600;
+    font-family: 'SF Mono', 'Monaco', monospace;
+}
+
+.tooltip-info {
+    font-size: 10px;
+    color: var(--rc-text);
+    text-align: center;
+    padding: 6px 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+}
+
+.main-roller-header {
+    z-index: 1002 !important;
+}
+
+/* Color-specific tooltip accents */
+.rc-achievement-badge[style*="--rc-bad"] .rc-achievement-tooltip {
+    border-color: rgba(255, 85, 85, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-bad"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(255, 85, 85, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-text-dim"] .rc-achievement-tooltip {
+    border-color: rgba(138, 138, 181, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-text-dim"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(138, 138, 181, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-accent"] .rc-achievement-tooltip {
+    border-color: rgba(0, 216, 255, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-accent"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(0, 216, 255, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-warn"] .rc-achievement-tooltip {
+    border-color: rgba(255, 170, 0, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-warn"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(255, 170, 0, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-good"] .rc-achievement-tooltip {
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-good"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(0, 255, 136, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-title"] .rc-achievement-tooltip {
+    border-color: rgba(201, 104, 246, 0.4);
+}
+
+.rc-achievement-badge[style*="--rc-title"] .rc-achievement-tooltip::before {
+    border-top-color: rgba(201, 104, 246, 0.4);
+}
+
+/* Bottom-positioned tooltip for games achievement */
+.rc-achievement-tooltip.games-tooltip {
+    top: 100%;
+    bottom: auto;
+    transform: translateX(50%) translateY(-10px);
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+.rc-achievement-tooltip.games-tooltip::before {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: var(--rc-border);
+}
+
+.rc-achievement-tooltip.games-tooltip::after {
+    top: auto;
+    bottom: 100%;
+    border-top-color: transparent;
+    border-bottom-color: rgba(10, 10, 15, 0.95);
+    margin-top: 0;
+    margin-bottom: -1px;
+}
+
+/* Color-specific tooltip accents for bottom tooltip */
+.rc-achievement-badge[style*="--rc-bad"] .games-tooltip::before {
+    border-bottom-color: rgba(255, 85, 85, 0.4);
+    border-top-color: transparent;
+}
+
+.rc-achievement-badge[style*="--rc-text-dim"] .games-tooltip::before {
+    border-bottom-color: rgba(138, 138, 181, 0.4);
+    border-top-color: transparent;
+}
+
+.rc-achievement-badge[style*="--rc-accent"] .games-tooltip::before {
+    border-bottom-color: rgba(0, 216, 255, 0.4);
+    border-top-color: transparent;
+}
+
+.rc-achievement-badge[style*="--rc-warn"] .games-tooltip::before {
+    border-bottom-color: rgba(255, 170, 0, 0.4);
+    border-top-color: transparent;
+}
+
+.rc-achievement-badge[style*="--rc-good"] .games-tooltip::before {
+    border-bottom-color: rgba(0, 255, 136, 0.4);
+    border-top-color: transparent;
+}
+
+.rc-achievement-badge[style*="--rc-title"] .games-tooltip::before {
+    border-bottom-color: rgba(201, 104, 246, 0.4);
+    border-top-color: transparent;
+}
+
+/* Progress indicator styles */
+.choose-game-item-container {
+    position: relative;
+}
+
+.rc-bonus-badge {
+    animation: badgeGlow 2s ease-in-out infinite;
+}
+
+@keyframes badgeGlow {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Make game cards more interactive */
+.choose-game-item {
+    transition: all 0.3s ease !important;
+}
+
+/* Multi-pet expedition display */
+#rcLines2 .expeditionStat {
+    margin: 2px 0;
+    font-size: 11.7px;
+    font-family: 'SF Mono', monospace;
+}
+
+#rcLines2 .expeditionStat:first-child {
+    margin-top: 0;
+}
+
+#rcLines2 .expeditionStat:last-child {
+    margin-bottom: 0;
+}
+
+/* Pet name styling */
+
+.expeditionStat[data-pet-name] .rc-pet-name {
+    color: var(--rc-text);
+    font-weight: 600;
+}
+
+.expeditionStat[data-pet-name]::before {
+    color: var(--rc-warn);
+}
+
+/* Expedition numbering */
+.expeditionStat[data-expedition-type]::before {
+    content: "[EXP] ";
+    color: var(--rc-good);
+}
+
+/* Limit max height for rcLines2 when there are many pets */
+#rcLines2.max-pets {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Theme toggle button styles */
+#rcThemeToggleBtn {
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    margin-left: 6px;
+    width: 22px;
+    height: 22px;
+}
+
+#rcThemeToggleBtn:hover {
+    background: rgba(0, 216, 255, 0.1);
+    border-color: rgba(0, 216, 255, 0.3);
+    transform: rotate(15deg);
+}
+
+#rcThemeToggleBtn svg {
+    height: 14px;
+    width: 14px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+#rcThemeToggleBtn:hover svg {
+    opacity: 1;
+}
+
+#rcThemeToggleBtn svg path {
+    fill: var(--rc-text-dim);
+    transition: fill 0.2s ease;
+}
+
+#rcThemeToggleBtn:hover svg path {
+    fill: var(--rc-accent);
+}
+
+/* Theme selector section animations */
+#rcThemeSection.rc-hidden {
+    opacity: 0;
+    transform: scaleY(0.8);
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* Theme selector toggle in toggles grid */
+.rcToggle[data-key="showThemeSelector"] .rcToggle-icon {
+    animation: themeIconPulse 3s ease-in-out infinite;
+}
+
+@keyframes themeIconPulse {
+
+    0%,
+    100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 350px) {
+    #rcThemeToggleBtn {
+        width: 20px;
+        height: 20px;
+        margin-left: 4px;
+    }
+
+    #rcThemeToggleBtn svg {
+        height: 12px;
+        width: 12px;
+    }
+}
