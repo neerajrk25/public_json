@@ -1,5 +1,5 @@
 {
-    "css-string": ":root {
+    "css-string": `:root {
     --rc-bg: #0a0a0f;
     --rc-glass: rgba(20, 20, 30, 0.9);
     --rc-border: #2a2a3a;
@@ -1369,5 +1369,5 @@
         height: 12px;
         width: 12px;
     }
-}"
+}`
 }
