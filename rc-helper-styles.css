@@ -1369,3 +1369,7 @@
         width: 12px;
     }
 }
+
+.choose-game-item-container.active {
+    z-index: 1005;
+}
