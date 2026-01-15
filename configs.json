@@ -62,8 +62,8 @@
     "MAX_PETS_DISPLAY": 5,
     "PETS": {
         "lord_hexron": {
-            "pet_id": "694f77166f94c5dfed87b72d",
-            "user_pet_id": "695d552b825f08976d152cc9",
+            "pet_id": "694e7b1915c2edbd2fcc398d",
+            "user_pet_id": "694f77166f94c5dfed87b72d",
             "expeditionId": "67597aaf95ff918743e31d5e",
             "expeditionName": "Snowlit Avenue",
             "pet_name": "Lord Hexron"
