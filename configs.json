@@ -78,7 +78,7 @@
             "recharge_time": 24
         }
     },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "themeVersion": "1.0.0",
     "fetchMinMs": 15000,
     "fetchMaxMs": 30000
