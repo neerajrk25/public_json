@@ -561,10 +561,11 @@
 }
 
 #rcPanelBody.rc-collapsed {
-    max-height: 40px;
+    max-height: 0px;
     opacity: 1;
     transform: scaleY(0.92);
     overflow: hidden;
+    padding: 0;
 }
 
 /* Lines refresh pulse */
