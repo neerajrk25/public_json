@@ -217,9 +217,9 @@
 }
 
 .rcBtn {
-    font-size: 10px;
+    font-size: 9.5px;
     font-weight: 600;
-    padding: 6px 8px;
+    padding: 3px 4px;
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: linear-gradient(180deg,
@@ -514,7 +514,7 @@
 }
 
 #rcFooter {
-    margin-top: 8px;
+    margin-top: 5px;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     font-size: 9px;
@@ -558,6 +558,7 @@
         transform 0.25s ease;
     max-height: 1000px;
     opacity: 1;
+    padding-bottom: 0;
 }
 
 #rcPanelBody.rc-collapsed {
@@ -827,7 +828,7 @@
     align-items: center;
     gap: 8px;
     margin: 4px 0;
-    padding: 6px;
+    padding: 3px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 6px;
     border: 1px solid rgba(255, 255, 255, 0.05);
