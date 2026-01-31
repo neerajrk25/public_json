@@ -544,14 +544,14 @@
       "title": "#c7d2fe"
     }
   },
-  "ultra_compact_dark": {
-    "name": "Ultra Compact Dark",
+  "sci_fi_command": {
+    "name": "Sci\u2011Fi Command",
     "colors": {
       "bg": "#0b1020",
       "glass": "rgba(11,16,32,.96)",
       "border": "#1e2642",
       "accent": "#4cc9f0",
-      "accent2": "#22c55e",
+      "accent2": "#7c3aed",
       "good": "#22c55e",
       "warn": "#f59e0b",
       "bad": "#ef4444",
@@ -559,6 +559,23 @@
       "textDim": "#94a3b8",
       "codeBg": "#060913",
       "title": "#4cc9f0"
+    }
+  },
+  "void_chrome": {
+    "name": "Void Chrome",
+    "colors": {
+      "bg": "#05070d",
+      "glass": "rgba(5,7,13,.97)",
+      "border": "#2b2f45",
+      "accent": "#9d7cff",
+      "accent2": "#4cc9f0",
+      "good": "#22c55e",
+      "warn": "#f59e0b",
+      "bad": "#ef4444",
+      "text": "#f1f5f9",
+      "textDim": "#9aa4bf",
+      "codeBg": "#03040a",
+      "title": "#9d7cff"
     }
   }
 }

@@ -1378,28 +1378,70 @@
 }
 
 /* =========================================================
-   ULTRA COMPACT UI LAYER (ADDED – ORIGINAL CSS ABOVE)
+   SCI‑FI COMMAND UI LAYER (FUTURISTIC – ADDITIVE ONLY)
    ========================================================= */
 
 #rcPanel{
-  width:280px !important;
-  border-radius:14px;
+  background:
+    radial-gradient(120% 140% at 10% 0%, rgba(76,201,240,.08), transparent 60%),
+    radial-gradient(120% 140% at 100% 100%, rgba(124,58,237,.06), transparent 60%),
+    var(--rc-bg);
+  box-shadow:
+    0 0 0 1px rgba(76,201,240,.15),
+    0 20px 60px rgba(0,0,0,.7);
 }
 
-#rcBtns,#rcToggles{
-  display:flex !important;
-  flex-direction:column !important;
-  gap:6px !important;
+#rcPanelHeader{
+  background:
+    linear-gradient(180deg, rgba(76,201,240,.12), transparent),
+    var(--rc-bg);
 }
 
-.rcBtn,.rcToggle{
-  padding:6px 8px !important;
-  font-size:11px !important;
+#rcTitle{
+  letter-spacing:.6px;
+  text-shadow:0 0 12px rgba(76,201,240,.6);
 }
 
-.rcToggle-icon{display:none !important}
+/* Command Buttons */
+.rcBtn{
+  position:relative;
+  overflow:hidden;
+}
+.rcBtn::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, transparent, rgba(76,201,240,.15), transparent);
+  opacity:0;
+  transition:opacity .2s;
+}
+.rcBtn:hover::after{
+  opacity:1;
+}
 
+/* Toggle Pulse */
+.rcToggle input:checked ~ .rcToggle-label{
+  text-shadow:0 0 8px rgba(34,197,94,.6);
+}
+
+/* Telemetry Console */
 #rcLines{
-  font-size:12px !important;
-  line-height:1.55 !important;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(76,201,240,.04),
+      rgba(76,201,240,.04) 1px,
+      transparent 1px,
+      transparent 20px
+    ),
+    var(--rc-code-bg);
 }
+
+/* Section Glow */
+#rcPanelBody > *{
+  border-left:2px solid transparent;
+}
+#rcPanelBody > *:hover{
+  border-left-color:rgba(76,201,240,.5);
+}
+
