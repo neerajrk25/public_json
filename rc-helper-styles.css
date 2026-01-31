@@ -838,6 +838,7 @@
 #rcVolumeContainer input[type="range"] {
     flex: 1;
     height: 4px;
+    appearance: none;
     -webkit-appearance: none;
     background: linear-gradient(90deg,
             rgba(0, 216, 255, 0.6) 0%,
