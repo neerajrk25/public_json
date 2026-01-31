@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "2.1.0",
   "cyberpunk": {
     "name": "Cyberpunk",
     "colors": {
@@ -544,28 +544,28 @@
       "title": "#c7d2fe"
     }
   },
-  "rc_native": {
-    "name": "RC Native",
+  "compact_dark": {
+    "name": "Compact Dark",
     "colors": {
-      "bg": "#0f172a",
-      "glass": "rgba(15, 23, 42, 0.95)",
+      "bg": "#0b1220",
+      "glass": "rgba(11,18,32,.96)",
       "border": "#1e293b",
-      "accent": "#38bdf8",
-      "accent2": "#22c55e",
+      "accent": "#22c55e",
+      "accent2": "#38bdf8",
       "good": "#22c55e",
       "warn": "#f59e0b",
       "bad": "#ef4444",
       "text": "#e5e7eb",
       "textDim": "#94a3b8",
       "codeBg": "#020617",
-      "title": "#38bdf8"
+      "title": "#d946ef"
     }
   },
-  "rc_light": {
-    "name": "RC Light",
+  "compact_light": {
+    "name": "Compact Light",
     "colors": {
-      "bg": "#f8fafc",
-      "glass": "rgba(248, 250, 252, 0.95)",
+      "bg": "#ffffff",
+      "glass": "rgba(255,255,255,.96)",
       "border": "#cbd5e1",
       "accent": "#2563eb",
       "accent2": "#16a34a",
@@ -574,25 +574,8 @@
       "bad": "#dc2626",
       "text": "#020617",
       "textDim": "#475569",
-      "codeBg": "#e2e8f0",
+      "codeBg": "#f1f5f9",
       "title": "#2563eb"
-    }
-  },
-  "rc_contrast": {
-    "name": "RC High Contrast",
-    "colors": {
-      "bg": "#000000",
-      "glass": "rgba(0, 0, 0, 0.95)",
-      "border": "#ffffff",
-      "accent": "#00ffff",
-      "accent2": "#ff00ff",
-      "good": "#00ff00",
-      "warn": "#ffff00",
-      "bad": "#ff0000",
-      "text": "#ffffff",
-      "textDim": "#aaaaaa",
-      "codeBg": "#000000",
-      "title": "#00ffff"
     }
   }
 }
