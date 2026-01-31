@@ -79,7 +79,7 @@
         }
     },
     "version": "1.0.2",
-    "themeVersion": "1.0.2",
+    "themeVersion": "1.1.0",
     "fetchMinMs": 15000,
     "fetchMaxMs": 30000
 }

@@ -1,0 +1,126 @@
+:root {
+  --rc-bg: #0f172a;
+  --rc-glass: rgba(15, 23, 42, 0.95);
+  --rc-border: #1e293b;
+  --rc-accent: #38bdf8;
+  --rc-accent-2: #22c55e;
+  --rc-good: #22c55e;
+  --rc-warn: #f59e0b;
+  --rc-bad: #ef4444;
+  --rc-text: #e5e7eb;
+  --rc-text-dim: #94a3b8;
+  --rc-code-bg: #020617;
+  --rc-title: #38bdf8;
+}
+
+#rcPanel {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 360px;
+  background: var(--rc-glass);
+  border-radius: 14px;
+  border: 1px solid var(--rc-border);
+  box-shadow: 0 20px 40px rgba(0,0,0,.55);
+  backdrop-filter: blur(12px);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--rc-text);
+  overflow: hidden;
+  z-index: 999999;
+}
+
+/* Header redesigned to match RollerCoin cards */
+#rcPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #020617, #020617cc);
+  border-bottom: 1px solid var(--rc-border);
+}
+
+#rcTitle {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: var(--rc-title);
+}
+
+/* Body split layout */
+#rcPanelBody {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  padding: 12px;
+}
+
+/* Buttons styled like RC primary buttons */
+.rcBtn {
+  padding: 8px 10px;
+  font-size: 11px;
+  border-radius: 8px;
+  border: 1px solid var(--rc-border);
+  background: linear-gradient(180deg, #1e293b, #020617);
+  color: var(--rc-text);
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.rcBtn:hover {
+  background: linear-gradient(180deg, #2563eb, #1d4ed8);
+  border-color: #2563eb;
+}
+
+/* Toggles redesigned as RC-style switches */
+#rcToggles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.rcToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #020617;
+  border: 1px solid var(--rc-border);
+  font-size: 11px;
+}
+
+.rcToggle input {
+  appearance: none;
+  width: 34px;
+  height: 18px;
+  border-radius: 20px;
+  background: #334155;
+  position: relative;
+  cursor: pointer;
+  transition: background .2s;
+}
+.rcToggle input:checked {
+  background: var(--rc-accent);
+}
+.rcToggle input::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  transition: transform .2s;
+}
+.rcToggle input:checked::after {
+  transform: translateX(16px);
+}
+
+/* Terminal output cleaner */
+#rcLines {
+  background: var(--rc-code-bg);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 11px;
+  border: 1px solid var(--rc-border);
+}
