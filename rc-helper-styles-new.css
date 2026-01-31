@@ -1378,26 +1378,28 @@
 }
 
 /* =========================================================
-   COMPACT UX PRO – CSS ONLY
+   ULTRA COMPACT UI LAYER (ADDED – ORIGINAL CSS ABOVE)
    ========================================================= */
 
-:root{
-  --rc-density:1;
-  --rc-gap:calc(6px * var(--rc-density));
-  --rc-pad:calc(8px * var(--rc-density));
-  --rc-font:calc(12px * var(--rc-density));
+#rcPanel{
+  width:280px !important;
+  border-radius:14px;
 }
 
-#rcPanel{width:300px;font-size:var(--rc-font)}
-#rcBtns,#rcToggles{grid-template-columns:1fr!important}
+#rcBtns,#rcToggles{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:6px !important;
+}
 
-.rcBtn{padding:calc(6px * var(--rc-density));font-size:var(--rc-font)}
-.rcToggle{padding:calc(6px * var(--rc-density))}
-.rcToggle-icon{display:none}
+.rcBtn,.rcToggle{
+  padding:6px 8px !important;
+  font-size:11px !important;
+}
 
-#rcLines{font-size:calc(12px * var(--rc-density));padding:calc(10px * var(--rc-density))}
-#rcLines p::before{display:none}
+.rcToggle-icon{display:none !important}
 
-:root[data-theme="compact_dark"]{--rc-density:.9}
-:root[data-theme="compact_light"]{--rc-density:1}
-:root[data-theme="compact_contrast"]{--rc-density:1.1}
+#rcLines{
+  font-size:12px !important;
+  line-height:1.55 !important;
+}

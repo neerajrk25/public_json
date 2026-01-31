@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "1.0.2",
   "cyberpunk": {
     "name": "Cyberpunk",
     "colors": {
@@ -544,38 +544,21 @@
       "title": "#c7d2fe"
     }
   },
-  "compact_dark": {
-    "name": "Compact Dark",
+  "ultra_compact_dark": {
+    "name": "Ultra Compact Dark",
     "colors": {
-      "bg": "#0b1220",
-      "glass": "rgba(11,18,32,.96)",
-      "border": "#1e293b",
-      "accent": "#22c55e",
-      "accent2": "#38bdf8",
+      "bg": "#0b1020",
+      "glass": "rgba(11,16,32,.96)",
+      "border": "#1e2642",
+      "accent": "#4cc9f0",
+      "accent2": "#22c55e",
       "good": "#22c55e",
       "warn": "#f59e0b",
       "bad": "#ef4444",
-      "text": "#e5e7eb",
+      "text": "#e6edf7",
       "textDim": "#94a3b8",
-      "codeBg": "#020617",
-      "title": "#d946ef"
-    }
-  },
-  "compact_light": {
-    "name": "Compact Light",
-    "colors": {
-      "bg": "#ffffff",
-      "glass": "rgba(255,255,255,.96)",
-      "border": "#cbd5e1",
-      "accent": "#2563eb",
-      "accent2": "#16a34a",
-      "good": "#16a34a",
-      "warn": "#d97706",
-      "bad": "#dc2626",
-      "text": "#020617",
-      "textDim": "#475569",
-      "codeBg": "#f1f5f9",
-      "title": "#2563eb"
+      "codeBg": "#060913",
+      "title": "#4cc9f0"
     }
   }
 }
