@@ -1438,10 +1438,12 @@
 }
 
 /* Section Glow */
-#rcPanelBody > *{
-  border-left:2px solid transparent;
+#rcPanelBody > *,
+#rcPaneBody2 > * {
+  border-left: 2px solid transparent;
 }
-#rcPanelBody > *:hover{
-  border-left-color:rgba(76,201,240,.5);
+#rcPanelBody > *:hover:not(#rcBtns),
+#rcPaneBody2 > *:hover:not(:first-child) {
+  border-left-color: rgba(76,201,240,.5);
 }
 
