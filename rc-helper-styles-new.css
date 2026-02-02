@@ -1443,7 +1443,7 @@
   border-left: 2px solid transparent;
 }
 #rcPanelBody > *:hover:not(#rcBtns),
-#rcPaneBody2 > *:hover:not(:first-child) {
+#rcPaneBody2 > *:hover {
   border-left-color: rgba(76,201,240,.5);
 }
 
