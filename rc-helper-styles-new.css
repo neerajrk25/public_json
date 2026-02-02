@@ -1442,7 +1442,7 @@
 #rcPanelBody2 > * {
   border-left: 2px solid transparent;
 }
-#rcPanelBody > *:hover:not(#rcBtns),
+#rcPanelBody > *:hover:not(#rcBtns, #rcToggles),
 #rcPanelBody2 > *:hover {
   border-left-color: rgba(76,201,240,.5);
 }
