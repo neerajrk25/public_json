@@ -1494,7 +1494,7 @@
         border-left: 2px solid transparent;
     }
 
-    >*:hover:not(.content-container) {
+    >*:hover:not(.content-container, .title) {
         text-shadow: 0 0 8px rgba(76, 201, 240, .6);
         border-left-color: rgba(76, 201, 240, .5);
     }
