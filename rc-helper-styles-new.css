@@ -1359,6 +1359,29 @@
     }
 }
 
+            
+@keyframes rewardsModalSlideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rewardItemFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 350px) {
     #rcThemeToggleBtn {
@@ -1447,3 +1470,76 @@
   border-left-color: rgba(76,201,240,.5);
 }
 
+/** Expedition Reward Modal **/
+#expeditionRewardsModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 1000000;
+  max-height: 70vh;
+  max-width: 500px;
+  width: 90%;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 13px;
+  animation: rewardsModalSlideDown 0.3s cubic-bezier(.22,.61,.36,1);
+
+  > *:hover {
+    text-shadow: 0 0 8px rgba(76,201,240,.6);
+  }
+
+  .accentStripe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.6;
+    pointer-events: none;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .close-btn {
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    width: 28px;
+    height: 28px;
+  }
+
+  div::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  div::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+}
