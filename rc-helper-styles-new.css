@@ -1499,7 +1499,12 @@
         border-left-color: rgba(76, 201, 240, .5);
     }
 
-    .content-container>*:hover {
+    .content-container>*:hover:not(.reward-container) {
+        text-shadow: 0 0 8px rgba(76, 201, 240, .6);
+        border-left-color: rgba(76, 201, 240, .5);
+    }
+
+    .reward-container>*:hover {
         text-shadow: 0 0 8px rgba(76, 201, 240, .6);
         border-left-color: rgba(76, 201, 240, .5);
     }
