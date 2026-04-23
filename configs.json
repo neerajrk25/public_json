@@ -72,14 +72,14 @@
         "cowham": {
             "pet_id": "66f6b5e23899a1c714b24941",
             "user_pet_id": "695d552b825f08976d152cc9",
-            "expeditionId": "66fd2a3249652dbe6a40dfe0",
-            "expeditionName": "Deep Forest",
+            "expeditionId": "66fd2a3249652dbe6a40e0ae",
+            "expeditionName": "Tousland",
             "pet_name": "CowHam",
             "recharge_time": 24
         }
     },
-    "version": "1.0.2",
-    "themeVersion": "1.0.2",
+    "version": "1.0.3",
+    "themeVersion": "1.0.3",
     "fetchMinMs": 15000,
     "fetchMaxMs": 30000
 }
