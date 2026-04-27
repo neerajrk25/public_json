@@ -1585,19 +1585,15 @@
     100% { opacity: 0; }
 }
 
-.img-item .progress-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
-  color: #fff;
-  font-weight: bold;
-  font-size: 16px;
-
-  background: rgba(0, 0, 0, 0.5);
-  padding: 4px 8px;
-  border-radius: 6px;
-
-  pointer-events: none;
-}
+.rc-countdown-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9);
+    pointer-events: none;
+    z-index: 10;
+  }
