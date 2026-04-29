@@ -33,6 +33,11 @@
         "HAMSTER_CHECK": 1000,
         "GOOGLE_SIGNIN_CHECK": 2000
     },
+    "TIMINGS": {
+      "FAST": 100,
+      "NORMAL": 1000,
+      "SLOW": 3000
+    },
     "API_ENDPOINTS": [
         "/api/",
         "/auth/",
@@ -78,8 +83,8 @@
             "recharge_time": 24
         }
     },
-    "version": "1.0.5",
-    "themeVersion": "1.0.5",
+    "version": "1.0.6",
+    "themeVersion": "1.0.6",
     "fetchMinMs": 15000,
     "fetchMaxMs": 30000
 }
