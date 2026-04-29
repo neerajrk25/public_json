@@ -455,12 +455,14 @@
 }
 
 #rcLines p:first-child,
+#rcLines .rcGamesPlayedInfo,
 #rcLines p.rcGamesPlayedInfo {
     color: var(--rc-text-dim);
     padding-left: 0;
 }
 
 #rcLines p:first-child::before,
+#rcLines .rcGamesPlayedInfo::before,
 #rcLines p.rcGamesPlayedInfo::before {
     content: none;
 }
