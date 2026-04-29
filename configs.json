@@ -26,17 +26,18 @@
     },
     "API_LOG_LIMIT": 50,
     "INTERVALS": {
-        "MAIN_LOOP": 1000,
-        "CHOOSE_GAME": 1500,
-        "ELECTRICITY_MONITOR": 5000,
-        "ELECTRICITY_DISPLAY": 1000,
-        "HAMSTER_CHECK": 1000,
-        "GOOGLE_SIGNIN_CHECK": 2000
+        "MAIN_LOOP": 1e3,
+        "CHOOSE_GAME": 1.5e3,
+        "ELECTRICITY_MONITOR": 5e3,
+        "ELECTRICITY_DISPLAY": 1e3,
+        "HAMSTER_CHECK": 1e3,
+        "GOOGLE_SIGNIN_CHECK": 2e3,
+        "SERVER_TIME_MONITOR": 1e3
     },
     "TIMINGS": {
-      "FAST": 100,
-      "NORMAL": 1000,
-      "SLOW": 3000
+      "FAST": 0.1e3,
+      "NORMAL": 1e3,
+      "SLOW": 3e3
     },
     "API_ENDPOINTS": [
         "/api/",
@@ -83,8 +84,8 @@
             "recharge_time": 24
         }
     },
-    "version": "1.0.6",
-    "themeVersion": "1.0.6",
+    "version": "1.0.7",
+    "themeVersion": "1.0.7",
     "fetchMinMs": 15000,
     "fetchMaxMs": 30000
 }
